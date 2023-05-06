@@ -1,3 +1,5 @@
+local QBCore = exports['qb-core']:GetCoreObject()
+
 local open = false
 local loaded = false
 Citizen.CreateThread(function()
