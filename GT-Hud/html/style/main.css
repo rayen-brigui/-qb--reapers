@@ -1,0 +1,788 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url(../assets/fonts/Gilroy-Light.otf);
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url(../assets/fonts/Gilroy-ExtraBold.otf);
+}
+
+@font-face {
+  font-family: 'Joyride';
+  src: url(../assets/fonts/Joyride-Regular.otf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #00000000;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+html {
+  font-size: 16px;
+}
+
+@media screen and (width: 2560px) and (height: 1440px) {
+  html {
+    font-size: 21.6px;
+  }
+}
+
+@media screen and (width: 1600px) and (height: 1024px) {
+  html {
+    font-size: 13.5px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(1.1);
+  }
+
+  .textHudMicrophone span {
+    transform: scale(1);
+  }
+
+}
+
+@media screen and (width: 1680px) and (height: 1050px) {
+  html {
+    font-size: 15.5px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(1.1);
+  }
+  .textHudMicrophone span {
+    transform: scale(0.98);
+  }
+}
+
+@media screen and (width: 1600px) and (height: 900px) {
+  html {
+    font-size: 13.5px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(1.0);
+  }
+  .textHudMicrophone span {
+    transform: scale(0.9);
+  }
+}
+
+@media screen and (width: 1768px) and (height: 992px) {
+  html {
+    font-size: 16px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(1.0);
+  }
+}
+@media screen and (width: 1366px) and (height: 768px) {
+  html {
+    font-size: 11.4px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(0.9);
+  }
+
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+@media screen and (width: 1280px) and (height: 1024px) {
+  html {
+    font-size: 14.6px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(0.9);
+  }
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+@media screen and (width: 1280px) and (height: 720px) {
+  html {
+    font-size: 11.2px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(0.9);
+  }
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+@media screen and (width: 1024px) and (height: 768px) {
+  html {
+    font-size: 11.05px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(0.9);
+  }
+  .textHudMicrophone span {
+    transform: scale(0.8);
+  }
+}
+@media screen and (width: 832px) and (height: 624px) {
+  html {
+    font-size: 10.05px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(0.9);
+  }
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+
+@media screen and (width: 800px) and (height: 600px) {
+  html {
+    font-size: 8px;
+  }
+  .speedometer {
+    position: relative;
+    transform: scale(0.9);
+  }
+  .textHudMicrophone span {
+    transform: scale(0.7);
+  }
+}
+
+
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.hud-topRight {
+  position: absolute;
+  right: 2rem;
+  top: 0rem;
+
+}
+
+.hud-topRightWrapper{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+
+.leftTop-hud {
+  position: absolute;
+  top: -1rem;
+  left: -3rem;
+}
+
+.id-container {
+  width: 3.438rem;
+  height: 3.813rem;
+  border:  #ffffff ridge 1px;
+  background: rgba(20, 27, 31, 0.25);
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.id {
+  width: 0.75rem;
+  height: 0.75rem;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: #Fbd30099;
+  line-height: 100%;
+  text-shadow: 0px 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.idValue {
+  width: 1.688rem;
+  height: 0.75rem;
+  position: relative;
+  top: 0.25rem;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 100%;
+  /* identical to box height, or 12px */
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0px 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+.rightTop-hud {
+  position: relative;
+  top: 0.75rem;
+  margin-left: 1rem;
+}
+
+.serverNameDisplay {
+  font-family: 'Joyride';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 100%;
+  /* or 30px */
+  background: linear-gradient(90deg, #f48d17 0%, #ff9100 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 0.38rem 2.566rem rgba(192, 122, 52, 0.55);
+}
+
+.serverNameBottom {
+  font-family: 'Joyride';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.33rem;
+  line-height: 100%;
+  /* or 21px */
+  text-align: right;
+  color: #ffffff;
+}
+
+.bank {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bankDisplay {
+  font-family: 'Joyride';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 100%;
+  /* identical to box height, or 20px */
+  color: #f48d17;
+  text-shadow: 0px 0.25rem 0.813rem #ebd30099;
+}
+
+.briefCase{
+  width: 1.5rem;
+  object-fit: contain;
+  margin-left: .65rem;
+  margin-top: .75rem;
+}
+
+.job_label{
+  font-family: 'Changa', sans-serif;
+font-style: normal;
+font-weight: 800;
+font-size: 1rem;
+line-height: 100%;
+/* identical to box height, or 16px */
+
+
+color: #Fbd30099;
+
+text-shadow: 0px 4px 13px rgba(0, 0, 0, 0.6);
+}
+
+.grade_label{
+  font-family: 'Changa', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: .93rem;
+  line-height: 100%;
+  /* identical to box height, or 15px */
+  
+  
+  color: #FFFFFF;
+  
+  text-shadow: 0px 4px 13px rgba(0, 0, 0, 0.6);
+}
+
+.bankAdd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.125rem 0.313rem;
+  font-family: 'Gilroy';
+  width: 5.313rem;
+  height: 2.25rem;
+  margin-right: 1rem;
+  background: rgb(235, 161, 2);
+  border-radius: 4px;
+}
+
+.moneyDisplay {
+  position: relative;
+  top: 1.5rem;
+  text-align: right;
+}
+
+.bankAddDisplay {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 100%;
+  /* or 14px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #f5880c;
+
+  text-shadow: 0px 0.25rem 0.813rem rgba(238, 135, 1, 0.6);
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 3px;
+}
+
+.cashDisplay {
+  font-family: 'Joyride';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 100%;
+  /* identical to box height, or 14px */
+  position: relative;
+  top: 0.5rem;
+  color: #Fbd30099;
+
+  text-shadow: 0px 0.25rem 0.813rem rgba(0, 0, 0, 0.6);
+}
+
+
+.hud {
+  position: absolute;
+  left: 4rem;
+  bottom: .5rem;
+}
+
+.textHud{
+  bottom: .15rem;
+}
+
+.radialHud{
+  left: 1rem;
+}
+.textHud{
+  left: 1.75rem;
+}
+
+.settings {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../assets/images/bg-black.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 300;
+}
+
+.settingsCenter {
+  position: absolute;
+  left: 53%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+.settingsBg {
+  background-image: url(../assets/images/settingsBg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 21.875rem;
+  height: 44.563rem;
+  position: relative;
+  margin-right: 4rem;
+  cursor: pointer;
+  transition: transform .2s linear;
+}
+
+.settingsBg:hover{
+  transform: translateY(-5px);
+}
+
+.settingsMap {
+  background-image: url(../assets/images/settingsMap.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 18rem;
+  margin: 2rem auto;
+  margin-top: 5rem;
+  position: relative;
+  height: 15.25rem;
+}
+
+.leftBottomMap {
+  position: absolute;
+  left: 1rem;
+  bottom: -1.5rem;
+}
+
+.exitSettings{
+  display: flex;
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
+
+.exitButton{
+  width: 1.563rem;
+  height: 1.563rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .9rem;
+  color: white;
+  font-family: 'Changa', sans-serif;
+  border-radius: 50%;
+  background: #FF3A3A;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.exitText{
+  font-family: 'Changa', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 0.875rem;
+line-height: 99.5%;
+/* or 14px */
+color: white;
+text-align: right;
+letter-spacing: 0.075em;
+}
+
+.mapText {
+  position: relative;
+  top: 7rem;
+  font-family: 'Changa', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.settingsBottom {
+  background-image: url(../assets/images/mapBottom.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 18rem;
+  height: 2rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.settingsTop {
+  background-image: url(../assets/images/mapTop.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 18rem;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.textHudSettings {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.textHudSettingsTop {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.line {
+  width: 3.5rem;
+  height: 0.438rem;
+  margin-top: .8rem;
+  background: #FFFFFF;
+}
+
+.textHudItem {
+  position: relative;
+}
+
+.textHudItem.top {
+  display: flex;
+}
+
+.settingsText {
+  margin-top: 7rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.classicSettingsText{
+  border: 1px solid white;
+  padding: .2rem .4rem;
+  border-radius: .25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.settingsBorder {
+  background: #FFFFFF;
+  position: absolute;
+  width: 100%;
+  height: 0.625rem;
+  left: 0;
+  bottom: 0;
+
+}
+
+.settingsBorder.active {
+  background: linear-gradient(to right,#a86fed , #00eee8);
+  box-shadow: 0px 0px 2.125rem  linear-gradient(to right,#a86fed , #00eee8);
+}
+
+.settingsTextTop {
+
+  font-family: 'Changa', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 2.438rem;
+  /* identical to box height */
+  text-shadow: 0px 0px 2.125rem rgba(255, 255, 255, 0.55);
+  color: white;
+}
+
+.MapIcon {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.settingsTextTop.active {
+  color: #79b9f7;
+  text-shadow: 0px 0px 2.125rem linear-gradient(to right,#a86fed , #00eee8);
+
+}
+
+.settingsTextBottom {
+  font-family: 'Changa', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.90rem;
+
+  color: #FFFFFF;
+
+}
+
+.percent {
+  position: absolute;
+  left: 50%;
+  bottom: -.86rem;
+  transform: translateX(-50%);
+  font-family: 'Changa', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.settingsSpeedometer {
+  background-image: url(../assets/images/speedometer.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 15.813rem;
+  height: 15.813rem;
+  position: absolute;
+  right: 3rem;
+  bottom: 1rem;
+}
+
+.settingSpeedometerWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.settingsSpeedometerText {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 4rem;
+  font-family: 'Changa', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.speedometerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Changa', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.65);
+  border: 2px solid rgba(255, 255, 255, 0.19);
+  box-sizing: border-box;
+  border-radius: 0.813rem;
+  margin: 1rem 0;
+
+  width: 4.813rem;
+  height: 2.563rem;
+}
+
+.speedometerButtons {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+}
+
+.settingsButtons {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.job{
+  background-image: url(../assets/images/right.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 3.25rem;
+  position: absolute;
+  bottom: -7rem;
+  right: 0rem;
+  width: 13.038rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+.settingButton {
+  position: relative;
+  right: 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.19);
+  box-sizing: border-box;
+  border-radius: 0.813rem;
+  font-family: 'Changa', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  width: 13.938rem;
+  height: 2.563rem;
+  margin-bottom: .7rem;
+  color: rgba(255, 255, 255, 0.65);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s linear;
+}
+.settingButton:hover{
+  color: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(255, 255, 255, .5);
+}
+
+.speedometerButtonActive {
+  width: 4.813rem;
+  height: 2.563rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Changa', sans-serif;
+  background-image: url(../assets/images/activeSpeedunit.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.813rem;
+  line-height: 0.938rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 1);
+  margin: 1rem 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.textFt{
+  font-family: 'Changa', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 12px;
+line-height: 15px;
+
+color: #FFFFFF;
+}
+
+.textHudBgWrapper{
+  background-image: url(../assets/images/textHudWrapper.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  transition: all .1s linear;
+}
