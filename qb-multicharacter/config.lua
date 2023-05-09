@@ -11,5 +11,6 @@ Config.customNationality = false -- Defines if Nationality input is custom of bl
 
 Config.DefaultNumberOfCharacters = 1 -- Define maximum amount of default characters (maximum 5 characters defined by default)
 Config.PlayersNumberOfCharacters = { -- Define maximum amount of player characters by rockstar license (you can find this license in your server's database in the player table)
-    { license = "license:49d299158646ed9e921b646ce39432d78dcc4e67", numberOfChars = 2 },
+    { license = "license:49d299158646ed9e921b646ce39432d78dcc4e67", numberOfChars = 2 },--RB
+    { license = "license:6268a04fc7f8899ba9c29c63bcdc59975de7d88b", numberOfChars = 2 },--Lopez anas
 }

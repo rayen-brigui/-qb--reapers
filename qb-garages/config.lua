@@ -308,6 +308,14 @@ Garages = {
 		blippoint = vector3(441.64, -984.96, 25.7),
         showBlip = false,
     },
+    ['AirportG'] = {
+        label = 'Airport Garage',
+        spawnPoint = {
+			vector4(-979.8, -2995.76, 13.95, 54.03),	
+		},
+		blippoint = vector3(-979.8, -2995.76, 13.95),
+        showBlip = true,
+    },
 }
 
 HouseGarages = {}
@@ -348,6 +356,14 @@ Depots = {
 			vector4(417.3, -1627.48, 28.79, 141.37),
 		},
 		blippoint = vector3(410.02, -1638.0, 29.29),
+        showBlip = true,
+    },
+    ['Airport Depot'] = {
+        label = 'Airport Depot',
+        spawnPoint = {
+            vector4(-1270.91, -3379.45, 13.94, 319.43),
+		},
+		blippoint = vector3(-1270.91, -3379.45, 13.94),
         showBlip = true,
     },
 }

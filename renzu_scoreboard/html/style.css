@@ -14,8 +14,8 @@
   position: relative;
   border-radius: 12px 12px 0 0;
   overflow: hidden;
-  background: rgb(4,38,71);
-  background: linear-gradient(90deg, rgba(4,38,71,1) 0%, rgba(0,42,97,0.9164040616246498) 35%, rgba(6,109,193,1) 100%);
+  background: rgb(3, 3, 3);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(0,42,97,0.9164040616246498) 35%, rgba(193, 165, 6, 0.603) 100%);
 }
 .leaderboard header .leaderboard__title {
   position: absolute;
@@ -187,7 +187,7 @@ color: white;
 background: rgb(4,38,71);
 background: linear-gradient( 
 90deg
-, rgba(4,38,71,1) 0%, rgba(0,42,97,0.9164040616246498) 35%, rgba(6,109,193,1) 100%);
+, rgba(4,38,71,1) 0%, rgba(0, 0, 0, 0.916) 35%, rgba(6,109,193,1) 100%);
 border-radius: 20px;
 }
 
